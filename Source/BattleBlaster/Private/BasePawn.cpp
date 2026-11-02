@@ -9,13 +9,6 @@ ABasePawn::ABasePawn()
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-}
-
-// Called when the game starts or when spawned
-void ABasePawn::BeginPlay()
-{
-	Super::BeginPlay();
-	
 	CapsuleComp = CreateDefaultSubobject<UCapsuleComponent>(TEXT("CapsuleComp"));
 	SetRootComponent(CapsuleComp);
 
@@ -24,6 +17,13 @@ void ABasePawn::BeginPlay()
 
 	TurretMesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("TurretMesh"));
 	TurretMesh->SetupAttachment(BaseMesh);
+}
+
+// Called when the game starts or when spawned
+void ABasePawn::BeginPlay()
+{
+	Super::BeginPlay();
+
 
 }
 

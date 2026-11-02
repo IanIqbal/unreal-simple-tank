@@ -14,6 +14,7 @@ Plugins/**/Intermediate/
 
 # IDE / project files (regenerated from .uproject)
 *.sln
+*.slnx
 *.suo
 *.sdf
 *.VC.db

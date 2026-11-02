@@ -27,12 +27,12 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
-	UPROPERTY("VisibleAnywhere")
+	UPROPERTY(VisibleAnywhere)
 	UCapsuleComponent* CapsuleComp;
 
-	UPROPERTY("VisibleAnywhere")
+	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* BaseMesh;
 
-	UPROPERTY("VisibleAnywhere")
+	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* TurretMesh;
 };
