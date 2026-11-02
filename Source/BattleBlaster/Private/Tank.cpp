@@ -5,7 +5,7 @@
 
 ATank::ATank() {
 	SpringArmComp = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArmComp"));
-	SpringArmComp->SetupAttachment(BaseMesh);
+	SpringArmComp->SetupAttachment(CapsuleComp);
 
 	CameraComp = CreateDefaultSubobject<UCameraComponent>(TEXT("CameraComp"));
 	CameraComp->SetupAttachment(SpringArmComp);
