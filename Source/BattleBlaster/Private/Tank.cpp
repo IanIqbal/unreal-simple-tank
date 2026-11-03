@@ -2,7 +2,8 @@
 
 
 #include "Tank.h"
-
+#include "Camera/CameraComponent.h"
+#include "InputMappingContext.h"
 ATank::ATank() {
 	SpringArmComp = CreateDefaultSubobject<USpringArmComponent>(TEXT("SpringArmComp"));
 	SpringArmComp->SetupAttachment(CapsuleComp);
