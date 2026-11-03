@@ -7,6 +7,8 @@
 
 #include "GameFramework/SpringArmComponent.h"
 #include "Camera/CameraComponent.h"
+#include "InputMappingContext.h"
+#include "EnhancedInputSubsystems.h"
 #include "Tank.generated.h"
 
 /**
@@ -23,6 +25,9 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
+
+	UPROPERTY(EditAnywhere, Category="Input")
+	UInputMappingContext* DefaultMappingContext;
 
 	UPROPERTY(VisibleAnywhere)
 	USpringArmComponent* SpringArmComp;

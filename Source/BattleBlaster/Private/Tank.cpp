@@ -13,6 +13,21 @@ ATank::ATank() {
 
 void ATank::BeginPlay() {
 	Super::BeginPlay();
+
+	APlayerController* PlayerController = Cast<APlayerController>(Controller);
+
+	if (PlayerController) {
+		
+		ULocalPlayer* LocalPlayer = PlayerController->GetLocalPlayer();
+
+		if (LocalPlayer) {
+			UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(LocalPlayer);
+		
+			if (Subsystem) {
+				Subsystem->AddMappingContext(DefaultMappingContext, 0);
+			}
+		}
+	}
 }
 
 void ATank::Tick(float DeltaTime) {
