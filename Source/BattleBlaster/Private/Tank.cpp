@@ -37,4 +37,12 @@ void ATank::Tick(float DeltaTime) {
 
 void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) {
 	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	if (UEnhancedInputComponent* EIC = Cast<UEnhancedInputComponent>(PlayerInputComponent)) {
+		EIC->BindAction(MoveAction, ETriggerEvent::Triggered, this, &ATank::MoveInput);
+	}
+}
+
+void ATank::MoveInput() {
+	UE_LOG(LogTemp, Display, TEXT("Move Input"));
 }
