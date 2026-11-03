@@ -43,6 +43,8 @@ void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) {
 	}
 }
 
-void ATank::MoveInput() {
-	UE_LOG(LogTemp, Display, TEXT("Move Input"));
+void ATank::MoveInput(const FInputActionValue& Value) {
+
+	float InputValue = Value.Get<float>();
+	UE_LOG(LogTemp, Display, TEXT("Move Input: %f"),InputValue );
 }
