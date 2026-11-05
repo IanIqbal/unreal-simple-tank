@@ -44,5 +44,8 @@ public:
 	UPROPERTY(VisibleAnywhere)
 	UCameraComponent* CameraComp;
 
+	UPROPERTY(EditAnywhere)
+	float TankSpeed;
+
 	void MoveInput(const FInputActionValue& Value);
 };
