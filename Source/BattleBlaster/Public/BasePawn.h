@@ -35,4 +35,9 @@ public:
 
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* TurretMesh;
+
+	UPROPERTY(VisibleAnywhere)
+	bool isDebugCursor = true;
+
+	void RotateTurret(FVector TargetPoint);
 };
