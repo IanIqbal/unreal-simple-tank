@@ -37,7 +37,12 @@ public:
 	UStaticMeshComponent* TurretMesh;
 
 	UPROPERTY(VisibleAnywhere)
+	USceneComponent* ProjectileSpawnPoint;
+
+	UPROPERTY(VisibleAnywhere)
 	bool isDebugCursor = true;
 
 	void RotateTurret(FVector TargetPoint);
+
+	void Fire();
 };
