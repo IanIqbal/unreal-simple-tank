@@ -23,4 +23,7 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	ATank* Tank;
+
+	UPROPERTY(EditAnywhere)
+	float DetectRange = 300.0f;
 };

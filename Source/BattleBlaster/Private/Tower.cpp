@@ -13,4 +13,11 @@ void ATower::BeginPlay() {
 
 void ATower::Tick(float DeltaTime) {
 	Super::Tick(DeltaTime);
+
+	float PlayerDist = FVector::Dist(GetActorLocation(), Tank->GetActorLocation());
+
+	if (PlayerDist <= DetectRange) {
+		RotateTurret(Tank->GetActorLocation());
+	}
 }
+
