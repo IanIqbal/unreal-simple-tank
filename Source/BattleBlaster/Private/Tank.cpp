@@ -2,6 +2,9 @@
 
 
 #include "Tank.h"
+#include "Engine/LocalPlayer.h"
+#include "Engine/World.h"
+#include "GameFramework/PlayerController.h"
 #include "Camera/CameraComponent.h"
 #include "InputMappingContext.h"
 #include "Kismet/GameplayStatics.h"

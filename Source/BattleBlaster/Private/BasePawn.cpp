@@ -2,6 +2,9 @@
 
 
 #include "BasePawn.h"
+#include "Components/StaticMeshComponent.h"
+#include "Engine/World.h"
+#include "DrawDebugHelpers.h"
 
 // Sets default values
 ABasePawn::ABasePawn()
