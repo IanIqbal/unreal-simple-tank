@@ -66,7 +66,7 @@ void ATank::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent) {
 void ATank::MoveInput(const FInputActionValue& Value) {
 
 	float InputValue = Value.Get<float>();
-	UE_LOG(LogTemp, Display, TEXT("Move Input: %f"),InputValue );
+	//UE_LOG(LogTemp, Display, TEXT("Move Input: %f"),InputValue );
 
 	FVector DeltaLocation = FVector(0.0f, 0.0f, 0.0f);
 	DeltaLocation.X = InputValue * TankSpeed *  UGameplayStatics::GetWorldDeltaSeconds(GetWorld());
