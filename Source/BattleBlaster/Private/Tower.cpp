@@ -13,7 +13,7 @@ void ATower::BeginPlay() {
 	Super::BeginPlay();
 
 	FTimerHandle FireTimerHandle;
-	GetWorldTimerManager().SetTimer(FireTimerHandle, this, &ATower::Fire, FireRate, true);
+	GetWorldTimerManager().SetTimer(FireTimerHandle, this, &ATower::CheckFire, FireRate, true);
 }
 
 void ATower::Tick(float DeltaTime) {
