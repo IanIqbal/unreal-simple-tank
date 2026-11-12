@@ -21,4 +21,6 @@ class BATTLEBLASTER_API ABattleBlasterGameMode : public AGameModeBase
 
 		ATank* Tank;
 		int32 TowersCount;
+
+	void ActorDied(AActor* DeadActor);
 };
