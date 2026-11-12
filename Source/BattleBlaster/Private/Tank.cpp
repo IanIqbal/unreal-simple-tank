@@ -101,5 +101,7 @@ void ATank::SetPlayerControl(bool status) {
 		else {
 			DisableInput(PlayerController);
 		}
+
+		PlayerController->bShowMouseCursor = status;
 	}
 }
