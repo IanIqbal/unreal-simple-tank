@@ -56,6 +56,12 @@ public:
 	UPROPERTY(EditAnywhere)
 	float TankTurnSpeed;
 
+	APlayerController* PlayerController;
+	bool IsAlive = true;
 	void MoveInput(const FInputActionValue& Value);
 	void TurnInput(const FInputActionValue& Value);
+
+	void HandleDestruction();
+	void SetPlayerControl(bool status);
+
 };

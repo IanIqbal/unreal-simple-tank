@@ -21,8 +21,8 @@ void ATank::BeginPlay() {
 	Super::BeginPlay();
 
 	
-
-	if (APlayerController* PlayerController = Cast<APlayerController>(Controller)) {
+	PlayerController = Cast<APlayerController>(Controller);
+	if (PlayerController ) {
 		
 		
 
@@ -39,7 +39,7 @@ void ATank::BeginPlay() {
 void ATank::Tick(float DeltaTime) {
 	Super::Tick(DeltaTime);
 
-	if (APlayerController* PlayerController = Cast<APlayerController>(Controller)) {
+	if (PlayerController) {
 
 		FHitResult HitResult;
 
@@ -80,4 +80,26 @@ void ATank::TurnInput(const FInputActionValue& Value) {
 
 	DeltaTurn.Yaw = InputValue * TankTurnSpeed * GetWorld()->GetDeltaSeconds();
 	AddActorLocalRotation(DeltaTurn);
+}
+
+void ATank::HandleDestruction() {
+	Super::HandleDestruction();
+
+	SetActorHiddenInGame(true);
+	SetActorTickEnabled(false);
+	SetPlayerControl(false);
+
+	IsAlive = false;
+}
+
+void ATank::SetPlayerControl(bool status) {
+	if (PlayerController) {
+		
+		if (status) {
+			EnableInput(PlayerController);
+		}
+		else {
+			DisableInput(PlayerController);
+		}
+	}
 }

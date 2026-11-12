@@ -52,4 +52,6 @@ public:
 	void RotateTurret(FVector TargetPoint);
 
 	void Fire();
+
+	void HandleDestruction();
 };
