@@ -55,7 +55,7 @@ void ABattleBlasterGameMode::ActorDied(AActor* DeadActor)
 {
 
 	bool IsGameOver = false;
-	bool IsVictory = false;
+	
 	if (DeadActor == Tank)
 	{
 		Tank->HandleDestruction();
