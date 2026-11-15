@@ -14,10 +14,17 @@ class BATTLEBLASTER_API UBattleBlasterGameInstance : public UGameInstance
 {
 	GENERATED_BODY()
 
+public:
 	UPROPERTY(VisibleAnywhere);
 	int32 CurrentLevel = 1;
 
 	UPROPERTY(EditAnywhere);
 	int32 LastLevel = 3;
 	
-};
+	void RestartCurrentLevel();
+	void RestartGame();
+	void LoadNextLevel();
+
+private:
+	void LoadLevel(int32 Level);
+;};
