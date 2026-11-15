@@ -21,6 +21,7 @@ class BATTLEBLASTER_API ABattleBlasterGameMode : public AGameModeBase
 
 		ATank* Tank;
 		int32 TowersCount;
-
+		float GameOverDelay = 3.0f;
 	void ActorDied(AActor* DeadActor);
+	void OnGameOver();
 };

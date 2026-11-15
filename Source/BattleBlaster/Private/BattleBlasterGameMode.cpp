@@ -5,6 +5,7 @@
 #include "AnalyticsPropertyStore.h"
 #include "Engine/World.h"
 #include "Kismet/GameplayStatics.h"
+#include "TimerManager.h"
 #include "Tower.h"
 
 void ABattleBlasterGameMode::BeginPlay()
@@ -82,5 +83,17 @@ void ABattleBlasterGameMode::ActorDied(AActor* DeadActor)
 	if (IsGameOver) {
 		FString GameOverMessage = IsVictory? "You Win!" : "Defeat!";
 		UE_LOG(LogTemp, Display, TEXT("Game over: %s"), *GameOverMessage);
+
+		FTimerHandle GameOverTimerHandle;
+		GetWorldTimerManager().SetTimer(GameOverTimerHandle, this, &ABattleBlasterGameMode::OnGameOver, GameOverDelay, true);
+
 	}
+
+	
+}
+
+void ABattleBlasterGameMode::OnGameOver()
+{
+	FString CurrentLevelName = UGameplayStatics::GetCurrentLevelName(GetWorld());
+	UGameplayStatics::OpenLevel(GetWorld(), *CurrentLevelName);
 }
