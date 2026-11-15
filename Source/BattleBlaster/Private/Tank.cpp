@@ -34,6 +34,8 @@ void ATank::BeginPlay() {
 			}
 		}
 	}
+
+	SetPlayerControl(false);
 }
 
 void ATank::Tick(float DeltaTime) {

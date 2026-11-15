@@ -22,7 +22,16 @@ class BATTLEBLASTER_API ABattleBlasterGameMode : public AGameModeBase
 		ATank* Tank;
 		int32 TowersCount;
 		float GameOverDelay = 3.0f;
+		UPROPERTY(EditAnywhere)
+		int32 CountdownDelay = 3;
+
+		int32 CountdownSeconds;
+
+		FTimerHandle CountdownTimerHandle;
+
 		bool IsVictory = false;
 	void ActorDied(AActor* DeadActor);
 	void OnGameOver();
+	void OnCountdownTimerTimeout();
+
 };
