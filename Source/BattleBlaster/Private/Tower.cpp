@@ -45,5 +45,6 @@ bool ATower::IsInFireRange()
 
 void ATower::HandleDestruction() {
 	Super::HandleDestruction();
+	Destroy();
 }
 
