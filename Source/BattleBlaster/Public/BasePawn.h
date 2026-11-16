@@ -6,6 +6,7 @@
 #include "GameFramework/Pawn.h"
 #include "Components/CapsuleComponent.h"
 #include "Projectile.h"
+#include "NiagaraFunctionLibrary.h"
 #include "BasePawn.generated.h"
 
 UCLASS()
@@ -49,6 +50,9 @@ public:
 	UPROPERTY(EditAnywhere)
 	bool isDebugProjectile = true;
 
+
+	UPROPERTY(EditAnywhere)
+	UNiagaraSystem* DeathParticles;
 	void RotateTurret(FVector TargetPoint);
 
 	void Fire();
